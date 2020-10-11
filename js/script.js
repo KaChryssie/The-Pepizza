@@ -121,3 +121,11 @@ Order.prototype.setDelivery = function(needsDelivery, deliveryLocation){
     this.needsDelivery = needsDelivery;
     this.deliveryLocation = deliveryLocation;
 }
+Order.prototype.getTotalAmount = function(){
+    var totalAmount = 0;
+    totalAmount = this.pizzaStyle.getOnePizzaPrice() * this.quantity;
+    if(this.needsDelivery === true){
+    totalAmount += deliveryCost;       
+    }
+    return totalAmount;
+}
