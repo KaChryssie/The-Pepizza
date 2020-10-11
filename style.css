@@ -13,3 +13,17 @@ margin-bottom: 30px;
     padding: 200px;
     color: white;
 }
+.Selection{
+    
+    background-image: url("images/-pizza-.jpg");
+    background-size: cover;
+    color: white;
+    width: 80%;
+    margin-left: 10%;
+    padding: 80px;
+    margin-bottom: 30px;
+}
+.section-3{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding:60px;
+}
