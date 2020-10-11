@@ -48,3 +48,7 @@ var toppings = {
         "Romana: Tomato,chesse,tuna, onion" : 750,
     }
 }
+
+var deliveryCost = 1000;
+var onePizza = "";
+var clientOrder = "";
