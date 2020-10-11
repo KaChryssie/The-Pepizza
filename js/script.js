@@ -110,3 +110,9 @@ PizzaStyle.prototype.getOnePizzaPrice = function(){
     }
     return onePizzaPrice;
 }
+function Order(pizzaStyle, quantity){
+    this.pizzaStyle = pizzaStyle;
+    this.quantity = quantity;
+    this.needsDelivery = false;
+    this.deliveryLocation = "";
+}
