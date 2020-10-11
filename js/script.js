@@ -52,3 +52,46 @@ var toppings = {
 var deliveryCost = 1000;
 var onePizza = "";
 var clientOrder = "";
+
+jQuery(function () {
+
+
+    $("#pizza-style").submit(function(e) {
+        e.preventDefault()
+        var chosenSize = $("#size").val();
+        var chosenCrust = $("#crust").val();
+        var chosenToppings = []; 
+        for(var i = 1; i <= 5; i++){
+            var b = $("#check"+i).is(":checked");
+            if(b === true){
+                chosenToppings.push($("#check"+i).val());
+            }
+        }
+        onePizza = new PizzaStyle(chosenSize, chosenCrust, chosenToppings);
+        display("one-pizza-price","RWF " + onePizza.getOnePizzaPrice());
+        $(".section-3").removeClass("hidden")
+
+    })
+
+    
+    $("#order-quantity").submit(function(e) {
+        e.preventDefault();
+        var quantity = $("#quantity").val();
+        clientOrder = new Order(onePizza, quantity);
+        $(".section-4").removeClass("hidden")
+    })
+
+    $("#pizza-delivery").submit(function(e) {
+        e.preventDefault()
+        var y_delivery = $("#y_delivery").is(":checked");
+
+        if(y_delivery === true){
+            var location = prompt("Enter your location", "enter location")
+            clientOrder.setDelivery(true, location);
+        }
+        clientOrder.displayOrder();
+        $(".section-5").removeClass("hidden")
+
+    })
+})
+
