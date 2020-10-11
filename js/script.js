@@ -95,3 +95,8 @@ jQuery(function () {
     })
 })
 
+function PizzaStyle(chosenSize, chosenCrust, chosenToppings) {
+    this.chosenSize = chosenSize;
+    this.chosenCrust = chosenCrust;
+    this.chosenToppings = chosenToppings;
+};
